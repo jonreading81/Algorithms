@@ -4,7 +4,7 @@ export default function solution(A, N) {
   let result = [];
 
   N = N % A.length;
-  
+
   for (i = 0; i < A.length; i++) {
     index = i + N;
     if (index >= A.length) {
@@ -14,5 +14,3 @@ export default function solution(A, N) {
   }
   return result;
 }
-
-

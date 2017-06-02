@@ -1,6 +1,6 @@
 import solution from '../src/cyclicRotation';
 
-describe.only('Cyclic rotation', function () {
+describe('Cyclic rotation', function () {
 	it('should move array  2 positions', function () {
 		expect(solution([1,2,3,4], 2)).to.deep.equal([3,4,1,2]);
 		
