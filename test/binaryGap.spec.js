@@ -1,6 +1,6 @@
 import solution from '../src/binaryGap';
 
-describe('binaryGap', function () {
+describe('Binary Gap', function () {
   it('should return 2 for 9 1001', function () {
     expect(solution(9)).to.equal(2);
   });
