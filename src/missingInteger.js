@@ -1,6 +1,5 @@
 export default function solution(A) {
   let objRegister = {};
-  let count = 0;
   let i = 0;
   let val;
 
@@ -9,7 +8,6 @@ export default function solution(A) {
     val = A[i];
     if (val <= A.length && !objRegister.hasOwnProperty(val)) {
       objRegister[val] = true;
-      count++;
     }
   }
 
@@ -18,6 +16,6 @@ export default function solution(A) {
       return i;
     }
   }
-  
+
   return 0;
 }
