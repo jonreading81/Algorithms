@@ -18,7 +18,7 @@ const solution = function (s, p, q) {
   let rightPos;
   let leftSum;
   let rightSum;
-  let occurances = 0;
+  let occurances;
 
   for (letter in prefixSumsOccurances) {
     occurances = 0;
@@ -44,32 +44,5 @@ const solution = function (s, p, q) {
   }
   return result;
 };
-/*
-const solutionSlow = function (s, p ,q) {
-  const impactForces = {
-    A: 1,
-    C: 2,
-    G: 3,
-    T: 4
-  };
-  let i;
-  let strPos;
-  let left;
-  let right;
-  let result = [];
-  let min;
 
-  for (i = 0; i < p.length; i++ ) {
-    left = p[i];
-    right = q[i];
-    min = impactForces[s.charAt(left)];
-    for (strPos = left + 1; strPos <= right; strPos++) {
-      min = Math.min(min, impactForces[s.charAt(strPos)]);
-    }
-    result.push(min);
-  }
-
-  return result;
-}
-*/
 export default solution;
