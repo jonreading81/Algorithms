@@ -1,6 +1,6 @@
 import solution from '../src/numberOfDiscIntersections';
 
-describe.only('NumberOfDiscIntersections', function () {
+describe('NumberOfDiscIntersections', function () {
   it('should solve codility example', function () {
     expect(solution([1,5,2,1,4,0])).to.equal(11);
   });
