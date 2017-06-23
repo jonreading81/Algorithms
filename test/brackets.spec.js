@@ -31,5 +31,14 @@ describe('Brackets', function () {
     expect(solution('')).to.equal(1);
     
   });
+
+  it('should pass on empty string', function () {
+
+    expect(solution('(()(())())')).to.equal(1);
+    
+  });
+
+
+  
   
 });
