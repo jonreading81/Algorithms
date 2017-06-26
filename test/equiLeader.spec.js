@@ -1,7 +1,7 @@
 import solution from '../src/equiLeader';
 
-describe.only('equiLeader', function () {
-  it.only('should solve codility example', function () {
+describe('equiLeader', function () {
+  it('should solve codility example', function () {
     const A = [4,3,4,4,4,2];
     expect(solution(A)).to.equal(2);
     

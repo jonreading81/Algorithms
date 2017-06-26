@@ -20,7 +20,6 @@ const solution = function (A) {
   let leaderRightCount;
   let i;
 
-  // get total
   for (i = 0; i < A.length; i++) {
     if (A[i] === leader) total++;
   }

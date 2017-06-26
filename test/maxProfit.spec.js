@@ -1,6 +1,6 @@
 import solution from '../src/maxProfit';
 
-describe.only('maxProfit', function () {
+describe('maxProfit', function () {
   it('should solve codility example', function () {
     const A = [21011, 21123, 21366, 21013, 21367];
     expect(solution(A)).to.equal(356);
