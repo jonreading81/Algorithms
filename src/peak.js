@@ -39,7 +39,7 @@ const solution = function (A) {
     let peakBlock;
 
     for (let p = 0 ; p < peaks.length; p++) {
-      peakBlock = Math.floor((peaks[p] / A.length ) * blocks);
+      peakBlock = Math.floor((peaks[p] / A.length) * blocks);
       peakRegister[peakBlock] = true;
     }
     console.log(peakRegister);
