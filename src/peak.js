@@ -42,7 +42,6 @@ const solution = function (A) {
       peakBlock = Math.floor((peaks[p] / A.length) * blocks);
       peakRegister[peakBlock] = true;
     }
-    console.log(peakRegister);
     if (Object.keys(peakRegister).length === blocks) maxblocks = blocks;
   }
   return maxblocks;
