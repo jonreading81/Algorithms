@@ -5,4 +5,9 @@ describe('chocolateByNumbers', function () {
     expect(solution(10, 4)).to.equal(5);
 
   });
+
+  it('simple', function () {
+    expect(solution(10, 5)).to.equal(2);
+
+  });
 });

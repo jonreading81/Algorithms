@@ -14,7 +14,6 @@ const lcm = function (a, b) {
 };
 
 const solution = function (n, m) {
-  console.log(lcm(n, m));
   return lcm(n, m) / m;
 
 };
