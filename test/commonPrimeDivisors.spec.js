@@ -1,6 +1,6 @@
 import solution from '../src/commonPrimeDivisors';
 
-describe.only('commonPrimeDivisors', function () {
+describe('commonPrimeDivisors', function () {
   it('should solve codility example', function () {
     const A = [15, 10, 3];
     const B = [75,30, 5];
