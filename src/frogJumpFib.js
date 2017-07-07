@@ -10,7 +10,8 @@ const getFibSquenceUpTo = function (max) {
 const solution = function (A) {
   // add leaf for end
   A.push(1);
-  let fib = getFibSquenceUpTo(100000);
+  const MAX_VALUE = 100000;
+  let fib = getFibSquenceUpTo(MAX_VALUE);
   let reachable = Array(A.length).fill(-1);
   let previousIndex;
   let curIndex;
@@ -25,7 +26,7 @@ const solution = function (A) {
     if (A[index] === 0 || reachable[index] > 0) return;
 
     curIndex = -1;
-    curValue = 100000;
+    curValue = MAX_VALUE;
     fib.every((jump) => {
       previousIndex = index - jump;
       if (previousIndex < 0) return false;
@@ -40,9 +41,7 @@ const solution = function (A) {
       reachable[index] = curValue + 1;
     }
   });
-
   return reachable[A.length - 1];
-
 };
 
 export default solution;

@@ -21,6 +21,4 @@ describe('frogJumpFib', function () {
     expect(solution(A)).to.equal(2);
   });
 
-
-
 });
