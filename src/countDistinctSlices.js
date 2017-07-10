@@ -10,7 +10,7 @@ const solution = function (n, A) {
     while (front < A.length) {
       found.push(A[front]);
       count++;
-      if(count > 1000000000){
+      if (count > 1000000000) {
         return 1000000000;
       }
       if (found.indexOf(A[front + 1]) === -1) {

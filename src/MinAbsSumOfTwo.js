@@ -8,10 +8,10 @@ const solution = function (A) {
   while (start <= end) {
     sum = A[start] + A[end];
     minSum = Math.min(Math.abs(sum), minSum);
-    if(sum <= 0){
+    if (sum <= 0) {
       start++;
     } else {
-      end --;
+      end--;
     }
   }
   return minSum;
