@@ -1,17 +1,13 @@
 export default function solution(A) {
   let register = {};
+  let count = 0;
 
-  A.forEach((item, index) => {
-    if (!register.hasOwnProperty(item)) {
-      register[item] = true;
+  A.forEach((value, index) => {
+    if (value <= A.length && !register.hasOwnProperty(value)) {
+      register[value] = true;
+      count++;
     }
   });
-
-  for (let i = 1; i <= A.length; i++) {
-    if (!register.hasOwnProperty(i)) {
-      return 0;
-    }
-  }
-
-  return 1;
+  
+  return (count === A.length) ? 1 : 0;
 }

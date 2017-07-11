@@ -1,14 +1,10 @@
 export default function solution(N, A) {
-  let counters = [];
+  let counters = Array(N).fill(0);
   let i = 0;
   let maxCounter = 0;
   let max = 0;
   let counterIndex;
   let val;
-
-  for (i = 0; i < N; i++) {
-    counters.push(0);
-  }
 
   for (i = 0; i < A.length; i++) {
     val = A[i] ;
@@ -26,7 +22,7 @@ export default function solution(N, A) {
       max = Math.max(max, counters[counterIndex]);
     }
   }
-
+  
   for (i = 0; i < N; i++) {
     if (counters[i] < maxCounter) {
       counters[i] = maxCounter;

@@ -12,5 +12,5 @@ describe('NumberOfDiscIntersections', function () {
   it('should solve codility example', function () {
     expect(solution([1,1,1,0,0,4])).to.equal(9);
   });
-  
+
 });

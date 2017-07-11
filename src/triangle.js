@@ -1,15 +1,9 @@
 const solution = function (A) {
   let p;
-  let q;
-  let r;
 
   A.sort((a, b) => a - b);
   for (p = 0; p < A.length - 2; p++) {
-    q = p + 1;
-    r = p + 2;
-    if (A[p] + A[q] > A[r] &&
-      A[q] + A[r] > A[p] &&
-      A[r] + A[p] > A[q]) {
+    if (A[p] + A[p + 1] > A[p + 2]) {
       return 1;
     }
   }

@@ -1,7 +1,7 @@
 import solution from '../src/tapeEquilibrium';
 
 describe('Tape Equlibrium', function () {
-  
+
   it('should solve codility example', function () {
     expect(solution([3, 1, 2, 4, 3])).to.equal(1);
   });
