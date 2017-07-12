@@ -15,9 +15,6 @@ const solution = function (A) {
   lowerLimits.sort(compare);
   upperLimits.sort(compare);
 
-  console.log(lowerLimits);
-  console.log(upperLimits);
-
   for (i = 0 ; i < A.length; i++) {
     j = 0;
     searchIntersections = -1;

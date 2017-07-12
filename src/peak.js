@@ -39,6 +39,7 @@ const solution = function (A) {
     let peakBlock;
 
     for (let p = 0 ; p < peaks.length; p++) {
+      // which block does the peak occur in
       peakBlock = Math.floor((peaks[p] / A.length) * blocks);
       peakRegister[peakBlock] = true;
     }

@@ -4,9 +4,8 @@ const solution = function (area) {
   let perimeter = 2 * (width + height);
 
   while (width * width <= area) {
-    height = Math.floor(area / width);
-    if (height * width === area) {
-      perimeter = Math.min(perimeter, 2 * (width + height));
+    if (area % width === 0) {
+      perimeter = Math.min(perimeter, 2 * (width + (area / width)));
     }
     width++;
 
