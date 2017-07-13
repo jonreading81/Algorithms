@@ -22,7 +22,6 @@ export default function solution(N, A) {
       max = Math.max(max, counters[counterIndex]);
     }
   }
-  
   for (i = 0; i < N; i++) {
     if (counters[i] < maxCounter) {
       counters[i] = maxCounter;

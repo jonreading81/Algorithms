@@ -25,6 +25,7 @@ const solution = function (A) {
     // ignore non leaves and exisiting paths
     if (A[index] === 0 || reachable[index] > 0) return;
 
+    // get the optimal jump count to reach this leaf
     curIndex = -1;
     curValue = MAX_VALUE;
     fib.every((jump) => {

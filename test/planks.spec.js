@@ -1,6 +1,6 @@
 import solution from '../src/planks';
 
-describe('Planks', function () {
+describe.only('Planks', function () {
   it('should solve codility example', function () {
     const A = [1,4,5,8];
     const B = [4,5,9,10];

@@ -1,11 +1,12 @@
 const solution = function (A, B) {
   const MAX_A = Math.max(...A);
   const MAX_B = Math.max(...B);
+  const modLimit = Math.pow(2, MAX_B);
   let fib = [0, 1];
   let result = Array(A.length);
 
   for (let i = 2; i <= MAX_A + 1; i++) {
-    fib[i] = fib[i - 1] + fib[i - 2] % Math.pow(2, MAX_B);
+    fib[i] = fib[i - 1] + fib[i - 2] % modLimit ;
   }
 
   for (let i = 0; i < A.length; i++) {

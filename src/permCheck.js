@@ -8,6 +8,5 @@ export default function solution(A) {
       count++;
     }
   });
-  
   return (count === A.length) ? 1 : 0;
 }

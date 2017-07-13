@@ -21,7 +21,7 @@ const solution = function (A, B) {
         lastFish = fishStack[fishStack.length - 1];
       }
       if (lastFish) {
-        if (!(lastFish.direction === 1 && currentFish.direction === 0 )) {
+        if (!(lastFish.direction === 1 && currentFish.direction === 0)) {
           fishStack.push(currentFish);
         }
       } else {
