@@ -6,4 +6,10 @@ describe('MinAbsSumOfTwo', function () {
     expect(solution(A)).to.equal(1);
 
   });
+
+  it('should solve codility example 2', function () {
+    const A = [-8,4,5,-10,3]
+    expect(solution(A)).to.equal(3);
+
+  });
 });

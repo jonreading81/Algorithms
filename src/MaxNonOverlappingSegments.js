@@ -4,11 +4,9 @@ const solution = function (A, B) {
   let count = 1;
   let lastEnd = B[0];
 
-  for (let i = 0; i < A.length; i++) {
+  for (let i = 1; i < A.length; i++) {
     if (A[i] > lastEnd) {
       count++;
-      lastEnd = B[i];
-    } else if (B[i] < lastEnd) {
       lastEnd = B[i];
     }
   }
