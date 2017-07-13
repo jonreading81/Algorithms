@@ -6,22 +6,14 @@ const solution = function (A) {
 
   A.sort((a, b) => a - b);
   for (p = 0; p < A.length - 2; p++) {
-    q = p + 1;
     r = p + 2;
-    while (r < A.length) {
-      if (A[p] + A[q] > A[r]) {
-        console.log(r - q);
-        count += r - q;
+    for (q = p + 1; q < A.length - 1; q++) {
+      while (r < A.length && (A[p] + A[q] > A[r])) {
         r++;
-      } else {
-        q++;
-        if (r === q) {
-          r++;
-        }
       }
+    count += (r - q - 1);
     }
   }
   return count;
 };
-
 export default solution;
