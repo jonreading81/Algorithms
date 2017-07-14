@@ -1,20 +1,18 @@
-const solution = (A) => {
-  let count = 0;
+function solution(A) {
+  const EAST = 0;
+  const MAX = 1000000000;
+
   let eastCount = 0;
+  let passingCount = 0;
 
   for (let i = 0; i < A.length; i++) {
-    if (A[i] === 0) {
+    if (A[i] === EAST) {
       eastCount++;
     } else {
-      count = count + eastCount;
-    }
-    if (count > 1000000000) {
-      count = -1;
-      break;
+      passingCount += eastCount;
+      if (passingCount > MAX) return -1;
     }
   }
-
-  return count;
-};
-
+  return passingCount;
+}
 export default solution;

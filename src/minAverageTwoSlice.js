@@ -1,40 +1,31 @@
-const solution = function (A) {
-  let minSlice = {
-    left: 0,
-    right: 1,
-    sum: A[0] + A[1]
-  };
+function Slice(pSums, start, end) {
+    this.start = start;
+    this.end = end;
+    this.total = (start > 0) ? pSums[this.end] - pSums[this.start - 1] : pSums[this.end]
+    this.avg = this.total / (this.end - this.start + 1);
+}
+
+function solution(A) {
+  let pSums = [A[0]];
+  for(let i = 1; i < A.length; i++) {
+    pSums.push(pSums[i-1] + A[i]);
+  }
+  let curSlice = new Slice(pSums, 0, 1);
+  let minSlice =  Object.assign({}, curSlice);
   let tmpSlice;
-  let workingSlice;
 
-  minSlice.avg = minSlice.sum / 2;
-  workingSlice = Object.assign({length: 2}, minSlice);
-
-  while (workingSlice.right < A.length && workingSlice.left < A.length - 1) {
-
-    tmpSlice = Object.assign({}, workingSlice);
-    tmpSlice.right ++;
-    tmpSlice.length ++;
-    tmpSlice.sum += A[tmpSlice.right];
-    tmpSlice.avg = tmpSlice.sum / tmpSlice.length;
-    if (workingSlice.avg > tmpSlice.avg) {
-      workingSlice = Object.assign({}, tmpSlice);
-      if (workingSlice.avg < minSlice.avg) {
-        minSlice = Object.assign({}, workingSlice);
-      }
-
-    } else {
-      workingSlice.left ++;
-      workingSlice.right = workingSlice.left + 1;
-      workingSlice.sum = A[workingSlice.left] + A[workingSlice.right];
-      workingSlice.length = 2;
-      workingSlice.avg = workingSlice.sum / workingSlice.length;
-      if (workingSlice.avg < minSlice.avg) {
-        minSlice = Object.assign({}, workingSlice);
-      }
+  while(curSlice.end < A.length && curSlice.start < curSlice.end) {
+    tmpSlice = new Slice(pSums, curSlice.start, curSlice.end +  1);
+    if(tmpSlice.avg < curSlice.avg) {
+      curSlice = Object.assign({}, tmpSlice)
+    }else {
+      curSlice = new Slice(pSums, curSlice.start + 1, curSlice.start + 2);
+    }
+    if(curSlice.avg < minSlice.avg){
+      minSlice =  Object.assign({}, curSlice)
     }
   }
-  return minSlice.left;
-};
+  return minSlice.start;
+}
 
 export default solution;

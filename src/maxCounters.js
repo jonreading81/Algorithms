@@ -1,31 +1,21 @@
 export default function solution(N, A) {
   let counters = Array(N).fill(0);
-  let i = 0;
   let maxCounter = 0;
-  let max = 0;
-  let counterIndex;
-  let val;
+  let maxValue = 0;
+  let value;
+  let index;
 
-  for (i = 0; i < A.length; i++) {
-    val = A[i] ;
-    counterIndex = val - 1;
-
-    if (val === N + 1) {
-      maxCounter = max;
-
-    } else if (val <= N) {
-
-      if (counters[counterIndex] < maxCounter) {
-        counters[counterIndex] = maxCounter;
-      }
-      counters[counterIndex]++;
-      max = Math.max(max, counters[counterIndex]);
+  for (let i = 0; i < A.length; i++) {
+    value = A[i];
+    index = value - 1;
+    if (value <= N) {
+      counters[index] = Math.max(maxCounter, counters[index]);
+      counters[index]++;
+      maxValue = Math.max(maxValue, counters[index]);
+    } else {
+      maxCounter = maxValue;
     }
   }
-  for (i = 0; i < N; i++) {
-    if (counters[i] < maxCounter) {
-      counters[i] = maxCounter;
-    }
-  }
+  counters = counters.map(value => Math.max(maxCounter, value));
   return counters;
 }
