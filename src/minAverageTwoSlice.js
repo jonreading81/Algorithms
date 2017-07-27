@@ -8,7 +8,7 @@ function Slice(pSums, start, end) {
 function solution(A) {
   let pSums = [A[0]];
   for(let i = 1; i < A.length; i++) {
-    pSums.push(pSums[i-1] + A[i]);
+    pSums.push(pSums[i - 1] + A[i]);
   }
   let curSlice = new Slice(pSums, 0, 1);
   let minSlice =  Object.assign({}, curSlice);
